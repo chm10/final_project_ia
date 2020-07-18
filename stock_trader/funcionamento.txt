@@ -1,0 +1,25 @@
+Geralmente quando as pessoas pensam em aplicar o aprendizado de máquina ao mercado de ações, elas geralmente pensam sobre isso em termos de previsão do valor de uma ação, que inclui apenas a direção, como se ela vai subir amanhã ou amanhã.
+
+É claro que essa informação por si só não faz nada fisicamente. Você ainda precisa se sentar no seu computador e fazer uma troca. Se estamos falando sobre negociação automatizada de alta frequência, essa é uma história diferente. Mesmo assim, digamos que seu modelo preveja que as ações que você está vendo aumentem amanhã.
+
+Isso significa que você fará uma troca. Talvez. Mas e se você estiver ocupado e esquecer. Ou, e se você acredita que vai subir apenas um pouco e depois diminuir rapidamente, provavelmente você não deseja comprar essas ações.
+
+Posso prever o preço das ações de amanhã, mas ainda tenho que escolher se vou agir com base nessas informações ou não. O aprendizado por reforço, por outro lado, não apenas faz previsões, mas também executa ações no ambiente que você fornece.
+
+Atualmente, você provavelmente pensa nos preços das ações como um simples conjunto de dados de séries temporais. Parece mais apropriado para uma rede neural recorrente do que para o aprendizado por reforço.
+
+O ambiente é o mercado de ações atual. É inerentemente aleatório, porque você realmente não pode prever o que acontecerá com o preço das ações de amanhã, mas suas ações afetam o meio ambiente.
+
+Em outras palavras, esses são todos os ingredientes que precisamos para especificar nosso problema como um problema de aprendizado por reforço. Podemos realizar ações como comprar e vender no meio ambiente e nosso estado é composto de informações sobre várias ações em nosso próprio portfólio e o ambiente é o próprio mercado de ações. A recompensa é uma função do dinheiro que ganhamos ou perdemos algo útil para tentar.
+
+
+2. Execução
+
+Dê o comando 
+
+
+
+python rl_trader.py -m train && python plot_rl_rewards.py -m train && python rl_trader.py -m test && python plot_rl_rewards.py -m test
+
+
+E aguarde
