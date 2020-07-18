@@ -29,15 +29,15 @@ def get_data():
 
 ### The experience replay memory ###
 class ReplayBuffer:
-  def __init__(self, obs_dim, act_dim, size):
-    self.obs1_buf = np.zeros([size, obs_dim], dtype=np.float32)
-    self.obs2_buf = np.zeros([size, obs_dim], dtype=np.float32)
-    self.acts_buf = np.zeros(size, dtype=np.uint8)
-    self.rews_buf = np.zeros(size, dtype=np.float32)
+  def __init__(self, obs_dim, act_dim, size): # Initialize array buffers and pointers
+    self.obs1_buf = np.zeros([size, obs_dim], dtype=np.float32) # store the states
+    self.obs2_buf = np.zeros([size, obs_dim], dtype=np.float32) # store next states
+    self.acts_buf = np.zeros(size, dtype=np.uint8) # stores actions 
+    self.rews_buf = np.zeros(size, dtype=np.float32) # stores rewards
     self.done_buf = np.zeros(size, dtype=np.uint8)
     self.ptr, self.size, self.max_size = 0, 0, size
 
-  def store(self, obs, act, rew, next_obs, done):
+  def store(self, obs, act, rew, next_obs, done): # State action reward
     self.obs1_buf[self.ptr] = obs
     self.obs2_buf[self.ptr] = next_obs
     self.acts_buf[self.ptr] = act
@@ -46,8 +46,9 @@ class ReplayBuffer:
     self.ptr = (self.ptr+1) % self.max_size
     self.size = min(self.size+1, self.max_size)
 
-  def sample_batch(self, batch_size=32):
-    idxs = np.random.randint(0, self.size, size=batch_size)
+  def sample_batch(self, batch_size=32): 
+    idxs = np.random.randint(0, self.size, size=batch_size) # Chooses random indices from 0 up to the size of the buffer
+    # return a dictionary containing the state's actions rewards and so forth indexed by those indices
     return dict(s=self.obs1_buf[idxs],
                 s2=self.obs2_buf[idxs],
                 a=self.acts_buf[idxs],
@@ -61,7 +62,7 @@ class ReplayBuffer:
 def get_scaler(env):
   # return scikit-learn scaler object to scale the states
   # Note: you could also populate the replay buffer here
-
+  # takes in an environment object since that will be used in fitting our scalar
   states = []
   for _ in range(env.n_step):
     action = np.random.choice(env.action_space)
@@ -86,7 +87,7 @@ def maybe_make_dir(directory):
 
 def mlp(input_dim, n_action, n_hidden_layers=1, hidden_dim=32):
   """ A multi-layer perceptron """
-
+  # Create an MLP neural network that work model and returns it
   # input layer
   i = Input(shape=(input_dim,))
   x = i
@@ -96,6 +97,8 @@ def mlp(input_dim, n_action, n_hidden_layers=1, hidden_dim=32):
     x = Dense(hidden_dim, activation='relu')(x)
   
   # final layer
+  # We are doing regression, so the output layer has no activation function 
+  # And the loss is the mean squared error  
   x = Dense(n_action)(x)
 
   # make the model
@@ -338,34 +341,37 @@ def play_one_episode(agent, env, is_train):
 if __name__ == '__main__':
 
   # config
-  models_folder = 'rl_trader_models'
-  rewards_folder = 'rl_trader_rewards'
-  num_episodes = 100#2000
-  batch_size = 32
-  initial_investment = 20000
+  # We have few configuration variables
+
+  models_folder = 'rl_trader_models' # Models folder tell us where we will save our models
+  rewards_folder = 'rl_trader_rewards' # Rewards folder tell us where we will store our rewars from both the training and testing phases
+  num_episodes = 100 #2000 # Number of episodes
+  batch_size = 32 # Batch size for sampling from the replay memory
+  initial_investment = 20000 # Initial investiment
 
 
-  parser = argparse.ArgumentParser()
+  parser = argparse.ArgumentParser() # Argument parser object. So that we can run the script with command line arguments
   parser.add_argument('-m', '--mode', type=str, required=True,
                       help='either "train" or "test"')
   args = parser.parse_args()
 
-  maybe_make_dir(models_folder)
-  maybe_make_dir(rewards_folder)
+  maybe_make_dir(models_folder) # Create models folder
+  maybe_make_dir(rewards_folder) # Create rewards folder
 
-  data = get_data()
-  n_timesteps, n_stocks = data.shape
+  data = get_data() # Call get_data function to get our time series
+  n_timesteps, n_stocks = data.shape # Call shape attribute to get the number of timestamps and the number of stocks
 
-  n_train = n_timesteps // 2
+  n_train = n_timesteps // 2 # Split the data into train and test
 
-  train_data = data[:n_train]
-  test_data = data[n_train:]
+  train_data = data[:n_train] # Train
+  test_data = data[n_train:] # Test
 
-  env = MultiStockEnv(train_data, initial_investment)
-  state_size = env.state_dim
+  env = MultiStockEnv(train_data, initial_investment) # Create an instance of our environment object with the training data
+  # Get the dimensionality of the state and the dimensionality of the action space
+  state_size = env.state_dim 
   action_size = len(env.action_space)
-  agent = DQNAgent(state_size, action_size)
-  scaler = get_scaler(env)
+  agent = DQNAgent(state_size, action_size) # Pass to agent constructor
+  scaler = get_scaler(env) # Call get_scaler to get scalar object
 
   # store the final value of the portfolio (end of episode)
   portfolio_value = []
@@ -376,18 +382,18 @@ if __name__ == '__main__':
       scaler = pickle.load(f)
 
     # remake the env with test data
-    env = MultiStockEnv(test_data, initial_investment)
+    env = MultiStockEnv(test_data, initial_investment) # Create the environment with the test data rather than the training data
 
     # make sure epsilon is not 1!
     # no need to run multiple episodes if epsilon = 0, it's deterministic
     agent.epsilon = 0.01
 
     # load trained weights
-    agent.load(f'{models_folder}/dqn.h5')
+    agent.load(f'{models_folder}/dqn.h5') 
 
   # play the game num_episodes times
   for e in range(num_episodes):
-    t0 = datetime.now()
+    t0 = datetime.now() # grab the current time since we will know the duration of each loop iteration
     val = play_one_episode(agent, env, args.mode)
     dt = datetime.now() - t0
     print(f"episode: {e + 1}/{num_episodes}, episode end value: {val:.2f}, duration: {dt}")
