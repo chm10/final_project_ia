@@ -254,11 +254,13 @@ class MultiStockEnv:
 
 
 
-class DQNAgent(object):
-  def __init__(self, state_size, action_size):
+class DQNAgent(object): # Agent: take past experiences learning from them and take actions such that they will maximize future rewards
+  def __init__(self, state_size, action_size): # size of state vector and the number of actions
+    # Correspond to the number of inputs and outputs of our neuron that work respectively
     self.state_size = state_size
     self.action_size = action_size
-    self.memory = ReplayBuffer(state_size, action_size, size=500)
+    self.memory = ReplayBuffer(state_size, action_size, size=500) # Initialize an instance of replay buffer object with the memory size of 500 
+    # Hyperparameters 
     self.gamma = 0.95  # discount rate
     self.epsilon = 1.0  # exploration rate
     self.epsilon_min = 0.01
@@ -270,8 +272,8 @@ class DQNAgent(object):
     self.memory.store(state, action, reward, next_state, done)
 
 
-  def act(self, state):
-    if np.random.rand() <= self.epsilon:
+  def act(self, state): # Takes an state and uses epsilon greedy to choose an action based on that state
+    if np.random.rand() <= self.epsilon: # random number between 0 and 1 and less than epsilon
       return np.random.choice(self.action_size)
     act_values = self.model.predict(state)
     return np.argmax(act_values[0])  # returns action
