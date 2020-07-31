@@ -1,0 +1,10 @@
+Dataset de Teste - Randomico:
+
+Accuracy on test data is: 0.84, acc_d1= 0.89, acc_d2= 0.81, acc_d3= 0.79, acc_d4= 0.82, acc_d5= 0.90
+
+Dataset de Teste - Permutacao:
+
+Accuracy on test data is: 0.74, acc_d1= 0.80, acc_d2= 0.69, acc_d3= 0.67, acc_d4= 0.71, acc_d5= 0.82
+
+
+
