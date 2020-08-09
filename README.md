@@ -12,7 +12,7 @@
 
 #### Apresentação da solução
 
-O vídeo de apresentação pode ser acessado em: https://youtu.be/izID_pnoxb4
+O vídeo de apresentação pode ser acessado em: https://youtu.be/MX9uiVBAwZI
 
 #### Resumo
 
