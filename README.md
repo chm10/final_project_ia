@@ -23,7 +23,7 @@ CAPTCHA é um teste centrado no ser humano para distinguir um operador humano de
 
 ### Relatório
 
-O relatório descreve em detalhes todo a metodologia de desenvolvimento. Acesse final_report.pdf.
+O relatório descreve em detalhes todo a metodologia de desenvolvimento. Acesse <a href="https://github.com/MatteusStranger/final_project_ia/blob/master/Final_Report.pdf">Final_Report.pdf</a>.
 
 ### Execução
 
