@@ -141,10 +141,10 @@ Acesse a pasta *captcha* -> <a href="https://github.com/MatteusStranger/final_pr
     <td></td>
     <td></td>
     <td></td>
+    <td>✓</td>
     <td></td>
     <td></td>
-    <td></td>
-    <td></td>
+    <td>✓</td>
     <td>✓</td>
   </tr>
   <tr>
@@ -175,7 +175,7 @@ Acesse a pasta *captcha* -> <a href="https://github.com/MatteusStranger/final_pr
     <td></td>
     <td></td>
     <td></td>
-    <td></td>
+    <td>✓</td>
     <td>✓</td>
     <td></td>
     <td></td>
