@@ -1,6 +1,6 @@
 ## Índice dos experimentos 
 
-Cada item terá um resumo sobre o experimento com seu respectivo diretório. Os experimentos foram utilizados como base na construção da fundamentação discussão, resultados e conclusões do projeto.
+Cada item terá um resumo sobre o experimento com seu respectivo diretório. Os experimentos foram utilizados como base na construção da fundamentação, discussão, resultados e conclusões do projeto.
 
 1. alternative_model \
 1.1 Teste com configuração de arquitetura alternativa para o problema 
