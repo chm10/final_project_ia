@@ -10,6 +10,12 @@
 * RA262885 - Matteus Vargas
 * RA147939 - Stéfani Fernandes
 
+#### Apresentação da solução
+
+O vídeo de apresentação pode ser acessado em: https://youtu.be/izID_pnoxb4
+
+#### Resumo
+
 CAPTCHA é um teste centrado no ser humano para distinguir um operador humano de bots, programas de ataque ou outro agente computadorizado que tenta imitar a inteligência humana. Esta pesquisa visa desenvolver um reconhecedor de CAPTCHAs, a fim de detectar suas fraquezas, vulnerabilidades e, possivelmente, forças; Foi criado, via script, datasets de treino e teste com duas metodologias diferentes de montagem de string, aleatório e por permutação, para avaliar se isso gera impacto. Os datasets de treino possuem de 90 à 100 mil imagens. A solução proposta é capaz de investigar CAPTCHAs alfanuméricos. Para treinar e testar foi desenvolvido uma Rede Neural, baseada em Convolutional Neural Networks (CNN), com dropout, e o seu desempenho, em acurácia, foi medido. Variamos parâmetros de treinamento e da rede neural a fim de determinar os cenários com melhores resultados e o papel que cada parâmetro desempenhou no processo. Nos melhor cenário, a solução alcançou 90% e 85% de acurácia para o método aleatório e por permutação, respectivamente, sendo que o dropout resolveu questões que poderiam ser problemáticas. Em termos de segurança, a permutação é mais desafiadora para ser quebrada. Ainda assim, deve ser necessário desenvolver pesquisas para aumentar a robustez dos CAPTCHAS.
 
 ### Conceitos abordados
