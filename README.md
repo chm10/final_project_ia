@@ -15,7 +15,7 @@ CAPTCHA é um teste centrado no ser humano para distinguir um operador humano de
 #### Execução
 
 Acesse a pasta *captcha* -> captcha.ipynb
-É possível executá-lo com o *jupyter-notebook* ou clique em abrir no Colab para executar no Google Colaboratory
+É possível executá-lo com o *jupyter-notebook* ou clique em abrir no Colab para executar no <a href="https://colab.research.google.com/github/MatteusStranger/final_project_ia/blob/master/captcha/Captcha_maisa.ipynb">Google Colaboratory</a>
 
 #### Atividades desenvolvidas
 
