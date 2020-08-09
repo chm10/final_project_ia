@@ -1,0 +1,5 @@
+Random:
+Accuracy on test data is: 0.90, acc_d1= 0.94, acc_d2= 0.88, acc_d3= 0.86, acc_d4= 0.88, acc_d5= 0.94
+
+Permutação: 
+Accuracy on test data is: 0.83, acc_d1= 0.88, acc_d2= 0.80, acc_d3= 0.77, acc_d4= 0.81, acc_d5= 0.90
