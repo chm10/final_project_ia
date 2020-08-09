@@ -1,7 +1,7 @@
 # Detecção de CAPTCHA com Aprendizado de Máquina e Visão Computacional
 
 ## <a href="https://www.ic.unicamp.br/~esther/teaching/2020s1/mc906/index.html">Projeto final da disciplina MC906/MO416 - Introdução à Inteligência Artificial</a>
-## <a href="https://www.unicamp.br/unicamp/"><b>Universidade Estadual de Campinas - Unicamp</a>
+## <a href="https://www.unicamp.br/unicamp/">Universidade Estadual de Campinas - Unicamp</a>
 
 ### Equipe:
 * RA231867 - Christian Hideki Maekawa
