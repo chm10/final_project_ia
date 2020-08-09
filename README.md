@@ -33,8 +33,8 @@ O relatório descreve em detalhes todo a metodologia de desenvolvimento. Acesse 
 
 ### Execução
 
-Acesse a pasta *captcha* -> captcha.ipynb
-É possível executá-lo com o *jupyter-notebook* ou execute-o no <a href="https://colab.research.google.com/github/MatteusStranger/final_project_ia/blob/master/captcha/Captcha_maisa.ipynb">*Google Colaboratory*</a>
+Acesse a pasta *captcha* -> <a href="https://github.com/MatteusStranger/final_project_ia/blob/master/captcha/Captcha.ipynb">Captcha.ipynb</a>
+É possível executá-lo com o *jupyter-notebook* ou execute-o no <a href="https://colab.research.google.com/github/MatteusStranger/final_project_ia/blob/master/captcha/Captcha.ipynb">*Google Colaboratory*</a>
 
 ### Atividades desenvolvidas
 
