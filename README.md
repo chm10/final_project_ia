@@ -1,147 +1,200 @@
-# final_project_ia
-Projeto final
+# Detecção de CAPTCHA com Aprendizado de Máquina e Visão Computacional
 
+## Projeto final da disciplina MC906/MO416 - Introdução à Inteligência Artificial
+### Universidade Estadual de Campinas - Unicamp
 
-Atividades desenvolvidas:
+#### Equipe:
+* RA231867 - Christian Hideki Maekawa
+* RA192683 - Giovane de Morais
+* RA181831 - Maísa Silva 
+* RA262885 - Matteus Vargas
+* RA147939 - Stéfani Fernandes
 
-1 - Escolha do tema: brainstorming 
-2 - Debate sobre o problema: o que do tema seria abordado
-3 - Revisão bibliográfica: procurar na literatura como fizeram
-4 - Definição da metodologia: como ele ia resolver o problema
-5 - Escolha de ferramentas: bibliotecas
-6 - Implementação do código
-7 - Confecção do relatório
-8 - Revisão de conceitos
-9 - Elaboração do roteiro de testes
-10 - Execução dos testes
-11 - Análise dos resultados
-12 - Gravação do vídeo
-13 - Revisão do relatório
-14 - Revisão do código
+CAPTCHA é um teste centrado no ser humano para distinguir um operador humano de bots, programas de ataque ou outro agente computadorizado que tenta imitar a inteligência humana. Esta pesquisa visa desenvolver um reconhecedor de CAPTCHAs, a fim de detectar suas fraquezas, vulnerabilidades e, possivelmente, forças; Foi criado, via script, datasets de treino e teste com duas metodologias diferentes de montagem de string, aleatório e por permutação, para avaliar se isso gera impacto. Os datasets de treino possuem de 90 à 100 mil imagens. A solução proposta é capaz de investigar CAPTCHAs alfanuméricos. Para treinar e testar foi desenvolvido uma Rede Neural, baseada em Convolutional Neural Networks (CNN), com dropout, e o seu desempenho, em acurácia, foi medido. Variamos parâmetros de treinamento e da rede neural a fim de determinar os cenários com melhores resultados e o papel que cada parâmetro desempenhou no processo. Nos melhor cenário, a solução alcançou 90% e 85% de acurácia para o método aleatório e por permutação, respectivamente, sendo que o dropout resolveu questões que poderiam ser problemáticas. Em termos de segurança, a permutação é mais desafiadora para ser quebrada. Ainda assim, deve ser necessário desenvolver pesquisas para aumentar a robustez dos CAPTCHAS.
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-w605{border-color:inherit;font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif !important;;font-weight:bold;
-  text-align:center;vertical-align:top}
-.tg .tg-5xks{font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif !important;;font-weight:bold;text-align:center;
-  vertical-align:top}
-.tg .tg-k9ij{font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif !important;;text-align:center;vertical-align:top}
-.tg .tg-fybw{border-color:inherit;font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif !important;;text-align:center;
-  vertical-align:top}
-</style>
-<table class="tg">
+#### Execução
+
+Acesse a pasta *captcha* -> captcha.ipynb
+É possível executá-lo com o *jupyter-notebook* ou clique em abrir no Colab para executar no Google Colaboratory
+
+#### Atividades desenvolvidas
+
+<table id="tg-jqkp6">
 <thead>
   <tr>
-    <th class="tg-w605">Aluno</th>
-    <th class="tg-w605" colspan="14">Atividades</th>
+    <th></th>
+    <th>Atividade</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-5xks"></td>
-    <td class="tg-k9ij">1</td>
-    <td class="tg-k9ij">2</td>
-    <td class="tg-k9ij">3</td>
-    <td class="tg-k9ij">4</td>
-    <td class="tg-k9ij">5</td>
-    <td class="tg-k9ij">6</td>
-    <td class="tg-k9ij">7</td>
-    <td class="tg-k9ij">8</td>
-    <td class="tg-k9ij">9</td>
-    <td class="tg-k9ij">10</td>
-    <td class="tg-k9ij">11</td>
-    <td class="tg-k9ij">12</td>
-    <td class="tg-k9ij">13</td>
-    <td class="tg-k9ij">14</td>
+    <td>1</td>
+    <td>Escolha do tema: brainstorming</td>
   </tr>
   <tr>
-    <td class="tg-w605">Christian</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw">✓</td>
+    <td>2</td>
+    <td>Debate sobre o problema: o que do tema seria abordado</td>
   </tr>
   <tr>
-    <td class="tg-w605">Giovane</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
+    <td>3</td>
+    <td>Revisão bibliográfica: procurar na literatura como fizeram</td>
   </tr>
   <tr>
-    <td class="tg-w605">Maísa</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw">✓</td>
+    <td>4</td>
+    <td>Definição da metodologia: como ele ia resolver o problema</td>
   </tr>
   <tr>
-    <td class="tg-w605">Matteus</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw">✓</td>
+    <td>5</td>
+    <td>Escolha de ferramentas: bibliotecas</td>
   </tr>
   <tr>
-    <td class="tg-w605">Stéfani</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw"></td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw">✓</td>
-    <td class="tg-fybw"></td>
+    <td>6</td>
+    <td>Implementação do código</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Confecção do relatório</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Revisão de conceitos</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Elaboração do roteiro de testes</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>Execução dos testes</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>Análise dos resultados</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>Gravação do vídeo</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>Revisão do relatório</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>Revisão do código</td>
+  </tr>
+</tbody>
+</table>
+
+<table id="tg-xUXio">
+<thead>
+  <tr>
+    <th>Aluno</th>
+    <th colspan="14">Atividades</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td></td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+    <td>7</td>
+    <td>8</td>
+    <td>9</td>
+    <td>10</td>
+    <td>11</td>
+    <td>12</td>
+    <td>13</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td>Christian</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✓</td>
+  </tr>
+  <tr>
+    <td>Giovane</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td></td>
+    <td></td>
+    <td>✓</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✓</td>
+    <td></td>
+    <td>✓</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Maísa</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>✓</td>
+    <td></td>
+    <td></td>
+    <td>✓</td>
+  </tr>
+  <tr>
+    <td>Matteus</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td></td>
+    <td></td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td></td>
+    <td></td>
+    <td>✓</td>
+  </tr>
+  <tr>
+    <td>Stéfani</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td></td>
+    <td></td>
+    <td>✓</td>
+    <td></td>
+    <td>✓</td>
+    <td></td>
+    <td></td>
+    <td>✓</td>
+    <td>✓</td>
+    <td></td>
   </tr>
 </tbody>
 </table>
