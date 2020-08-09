@@ -1,9 +1,9 @@
 # Detecção de CAPTCHA com Aprendizado de Máquina e Visão Computacional
 
-## Projeto final da disciplina MC906/MO416 - Introdução à Inteligência Artificial
-### Universidade Estadual de Campinas - Unicamp
+## Projeto final da disciplina MC906/MO416 - <a href="https://www.ic.unicamp.br/~esther/teaching/2020s1/mc906/index.html">Introdução à Inteligência Artificial</a>
+## <a href="https://www.unicamp.br/unicamp/"><b>Universidade Estadual de Campinas - Unicamp</a>
 
-#### Equipe:
+### Equipe:
 * RA231867 - Christian Hideki Maekawa
 * RA192683 - Giovane de Morais
 * RA181831 - Maísa Silva 
@@ -12,12 +12,25 @@
 
 CAPTCHA é um teste centrado no ser humano para distinguir um operador humano de bots, programas de ataque ou outro agente computadorizado que tenta imitar a inteligência humana. Esta pesquisa visa desenvolver um reconhecedor de CAPTCHAs, a fim de detectar suas fraquezas, vulnerabilidades e, possivelmente, forças; Foi criado, via script, datasets de treino e teste com duas metodologias diferentes de montagem de string, aleatório e por permutação, para avaliar se isso gera impacto. Os datasets de treino possuem de 90 à 100 mil imagens. A solução proposta é capaz de investigar CAPTCHAs alfanuméricos. Para treinar e testar foi desenvolvido uma Rede Neural, baseada em Convolutional Neural Networks (CNN), com dropout, e o seu desempenho, em acurácia, foi medido. Variamos parâmetros de treinamento e da rede neural a fim de determinar os cenários com melhores resultados e o papel que cada parâmetro desempenhou no processo. Nos melhor cenário, a solução alcançou 90% e 85% de acurácia para o método aleatório e por permutação, respectivamente, sendo que o dropout resolveu questões que poderiam ser problemáticas. Em termos de segurança, a permutação é mais desafiadora para ser quebrada. Ainda assim, deve ser necessário desenvolver pesquisas para aumentar a robustez dos CAPTCHAS.
 
-#### Execução
+### Conceitos abordados
+* CAPTCHAS
+* Aprendizado Supervisionado
+* Visão Computacional
+* Redes Neurais Convolucionais
+* Funções de ativação
+* Funções de otimização
+* Dropout
+
+### Relatório
+
+O relatório descreve em detalhes todo a metodologia de desenvolvimento. Acesse final_report.pdf.
+
+### Execução
 
 Acesse a pasta *captcha* -> captcha.ipynb
-É possível executá-lo com o *jupyter-notebook* ou clique em abrir no Colab para executar no <a href="https://colab.research.google.com/github/MatteusStranger/final_project_ia/blob/master/captcha/Captcha_maisa.ipynb">Google Colaboratory</a>
+É possível executá-lo com o *jupyter-notebook* ou execute-o no <a href="https://colab.research.google.com/github/MatteusStranger/final_project_ia/blob/master/captcha/Captcha_maisa.ipynb">*Google Colaboratory*</a>
 
-#### Atividades desenvolvidas
+### Atividades desenvolvidas
 
 <table id="tg-jqkp6">
 <thead>
