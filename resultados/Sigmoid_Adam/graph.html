@@ -1,0 +1,35 @@
+<html>
+   <head>
+
+      <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+      </script>
+      <script type = "text/javascript">
+         google.charts.load('current', {packages: ['corechart']});     
+      </script>
+   </head>
+   
+   <body>
+      <div id = "container" style = "width: 700px; height: 450px; margin: 0 auto">
+      </div>
+      <script language = "JavaScript">
+         function drawChart() {
+            // Define the chart to be drawn.
+            var data = google.visualization.arrayToDataTable([
+          ['Dígito','500 - Random','1000 - Random','500 - Permutação','1000 - Permutação'],
+          ['1',0.94,0.94,0.88,0.90],
+          ['2',0.88,0.88,0.80,0.82],
+          ['3',0.86,0.86,0.77,0.80],
+          ['4',0.88,0.89,0.81,0.83],
+          ['5',0.94,0.94,0.90,0.91]
+        ]);
+
+        var options = {title: 'Comparação de acurácia dos cenários com 500 e 1000 epochs'}; 
+
+            // Instantiate and draw the chart.
+            var chart = new google.visualization.ColumnChart(document.getElementById('container'));
+            chart.draw(data, options);
+         }
+         google.charts.setOnLoadCallback(drawChart);
+      </script>
+   </body>
+</html>

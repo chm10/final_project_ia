@@ -1,0 +1,3 @@
+Random: Accuracy on test data is: 0.04, acc_d1= 0.05, acc_d2= 0.04, acc_d3= 0.04, acc_d4= 0.04, acc_d5= 0.05
+
+Permut: Accuracy on test data is: 0.03, acc_d1= 0.03, acc_d2= 0.04, acc_d3= 0.03, acc_d4= 0.03, acc_d5= 0.03
